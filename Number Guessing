@@ -1,0 +1,31 @@
+from random import randint as r
+
+def checkNum(n,rand):
+    for i in range (n):
+        inputNum=int(input("Enter Your Guess :"))
+        if(inputNum==rand):
+            print('Your Guess Is Correct !')
+            break
+        elif(inputNum<rand):
+            print(f"Your Guess Is Lesser.. You have {(n-1)-i} Chances left !")
+        else:
+            print(f"Your guess is Higher..  You have {(n-1)-i} Chances left !")
+
+
+randNum=r(0,50)      
+print('___________NUMBER GUESSING GAME____________')     
+print('NUMBERS ARE FROM 0-50') 
+level=input('Enter the level of hardness (EASY/MEDIUM/HARD) \nEASY 10 CHANCES\nMEDIUM 7 CHANCES \nHARD 5 CHANCES \n :')
+l=level.upper()
+
+if(l=='HARD'):
+    checkNum(5, randNum)
+elif(l=='MEDIUM'):
+    checkNum(7, randNum)
+elif(l=='EASY'):
+    checkNum(10, randNum)
+else:
+    print('Enter a correct hardness level')
+
+    
+    
